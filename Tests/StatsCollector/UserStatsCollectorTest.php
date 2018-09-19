@@ -9,11 +9,10 @@ use Liuggio\StatsDClientBundle\StatsCollector\UserStatsCollector;
 
 class UserStatsCollectorTest extends StatsCollectorBase
 {
-
     public function mockSecurityContext($return)
     {
         $phpunit = $this;
-        $statsDFactory = $this->getMockBuilder('Symfony\Component\Security\Core\SecurityContextInterface')
+        $statsDFactory = $this->getMockBuilder('Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface')
             ->setMethods(array('isGranted', 'getToken', 'setToken'))
             ->getMock();
 
@@ -32,6 +31,7 @@ class UserStatsCollectorTest extends StatsCollectorBase
         $c = new UserStatsCollector('prefix', $this->mockStatsDFactory('prefix.' . $dataKey));
         $c->setSecurityContext($this->mockSecurityContext($isLogged));
         $c->collect(new Request(), new Response(), null);
+        $this->assertTrue(true);
     }
 
     public function provider()

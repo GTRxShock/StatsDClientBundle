@@ -14,5 +14,6 @@ class TimeStatsCollectorTest extends StatsCollectorBase
         $c = new TimeStatsCollector('prefix', $this->mockStatsDFactory('prefix', 'timing'));
 
         $c->collect(new Request(), new Response(), null);
+        $this->assertTrue(true);
     }
 }

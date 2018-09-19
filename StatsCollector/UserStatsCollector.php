@@ -5,11 +5,10 @@ namespace Liuggio\StatsDClientBundle\StatsCollector;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Exception\AuthenticationCredentialsNotFoundException;
-use Symfony\Component\Security\Core\SecurityContextInterface;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
 class UserStatsCollector extends StatsCollector
 {
-
     /**
      * Collects data for the given Response.
      *
@@ -40,7 +39,7 @@ class UserStatsCollector extends StatsCollector
         return true;
     }
 
-    public function setSecurityContext(SecurityContextInterface $security_context)
+    public function setSecurityContext(AuthorizationCheckerInterface $security_context)
     {
         $this->security_context = $security_context;
     }
@@ -49,6 +48,4 @@ class UserStatsCollector extends StatsCollector
     {
         return $this->security_context;
     }
-
-
 }

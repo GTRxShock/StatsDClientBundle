@@ -13,5 +13,6 @@ class VisitorStatsCollectorTest extends StatsCollectorBase
     {
         $c = new VisitorStatsCollector('prefix', $this->mockStatsDFactory('prefix'));
         $c->collect(new Request(), new Response(), null);
+        $this->assertTrue(true);
     }
 }

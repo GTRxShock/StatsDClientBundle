@@ -10,5 +10,6 @@ class DbalStatsCollectorTest extends StatsCollectorBase
     {
         $c = new DbalStatsCollector('prefix', $this->mockStatsDFactory('prefix.select', 'increment'));
         $c->startQuery('select * from liuggio where me in (Rome)');
+        $this->assertTrue(true);
     }
 }

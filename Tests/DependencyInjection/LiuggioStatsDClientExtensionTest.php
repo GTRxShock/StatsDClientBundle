@@ -6,8 +6,12 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 use Liuggio\StatsDClientBundle\DependencyInjection\LiuggioStatsDClientExtension;
 
-class LiuggioStatsDClientExtensionTest extends \PHPUnit_Framework_TestCase
+class LiuggioStatsDClientExtensionTest extends \PHPUnit\Framework\TestCase
 {
+    public function testPhpUnit()
+    {
+        $this->assertEquals(true, true);
+    }
 
     /**
      * @covers Liuggio\StatsDClientBundle\LiuggioStatsDClientBundle

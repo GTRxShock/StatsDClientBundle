@@ -9,11 +9,11 @@ use Liuggio\StatsDClientBundle\StatsCollector\MemoryStatsCollector;
 
 class MemoryStatsCollectorTest extends StatsCollectorBase
 {
-
     public function testCollect()
     {
         $c = new MemoryStatsCollector('prefix', $this->mockStatsDFactory('prefix', 'gauge'));
 
         $c->collect(new Request(), new Response(), null);
+        $this->assertTrue(true);
     }
 }

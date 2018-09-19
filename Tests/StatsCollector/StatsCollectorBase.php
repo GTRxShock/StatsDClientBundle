@@ -15,7 +15,7 @@ class StatsCollectorBase extends WebTestCase
             ->setMethods(array($method))
             ->getMock();
 
-        $dataMock = $this->getMock('\Liuggio\StatsdClient\Entity\StatsdDataInterface');
+        $dataMock = $this->getMockBuilder('\Liuggio\StatsdClient\Entity\StatsdDataInterface')->getMock();
 
         $statsDFactory->expects($this->any())
             ->method($method)
