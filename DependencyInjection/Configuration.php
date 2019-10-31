@@ -23,8 +23,8 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('liuggio_stats_d_client');
+        $treeBuilder = new TreeBuilder('liuggio_stats_d_client');
+        $rootNode = method_exists(TreeBuilder::class, 'getRootNode') ? $treeBuilder->getRootNode() : $treeBuilder->root('liuggio_stats_d_client');
 
         $rootNode
           ->children()
